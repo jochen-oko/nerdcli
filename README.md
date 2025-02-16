@@ -115,3 +115,7 @@ Check the max_width and max_height settings as well as the
 * clean up code
 * select quotes based on the image (not sure yet).
 * better color management
+
+
+# Build yourself
+Clone the repo and run ```cargo build --release```. When running for the first time, make sure that the assets folder (on root-level in this repo) is in the same directory as the executable (which typically will be put to target/release). This way, the initial config as well as some quotes and an image is copied to the correct places.

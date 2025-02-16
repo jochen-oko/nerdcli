@@ -44,6 +44,11 @@ pub fn ask_for_config_creation(proj_dirs: ProjectDirs) {
                 &images_path,
             )
         }
+
+        println!(
+            "\nThe configuration can be found under: {}",
+            proj_dirs.config_dir().as_os_str().to_str().unwrap()
+        )
     } else {
         println!("May the force be with you.");
     }
