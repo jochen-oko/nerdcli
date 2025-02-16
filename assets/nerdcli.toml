@@ -1,0 +1,69 @@
+# Config for nerdcli
+
+# Some parameters can be set via command line as well to overwrite this configuration file. 
+# See nerdcli -h for more information.
+
+
+# if max_width and max_height both are set to 100% and quotes are activated (show_quotes=true), then
+# the height of the image is reduced a bit, so that both the quote as well as the command line still
+# fit in the window.
+max_width_percentage = 100
+max_height_percentage = 50
+
+# preferred layout
+# ROW: image left, near the border, quote to the right of the image.
+# ROW_CENTERED: image and quote centered, image left, quote right
+# COL: image left, quote underneath
+# COL_CENTERED: image centered, quote centered underneath
+layout = "ROW_CENTERED"
+
+# if show_quotes=false, only the image is shown
+show_quotes = true
+
+# the margin above the image. If set to 0 (or omitted), the image is located directly at the terminal border
+margin_top = 2
+
+# the margin before the image. If set to 0 (or omitted), the image is located directly at the terminal border
+margin_left = 1
+
+
+# Directory to search images in (use the relative path in the config-folder for nerdcli)
+image_dir = "images"
+
+# Directory to search quotes in (use the relative path in the config-folder for nerdcli)
+quotes_dir = "quotes"
+
+# Only select quotes that are in one of the set quote_languages (randomly). If empty, the fallback "en" will be used.
+# The possible values in the attribute are derived from the folder names in the nerdcli config/quotes folder.
+quote_languages = ["en"]
+
+## quote colors / RGB values as (r, g, b)
+quote_color = {r=132, g=112, b=255}
+source_color = {r=180, g=205, b=205}
+author_color = {r=255, g=128, b=0}
+
+
+## filters
+### gifs are not animated! From animated gifs, just the first frame is shown.
+### jpg are quite slow to load for display in the terminal for some 
+### if you want to only select png files set image_types = ["png"]
+image_types = []
+
+### 
+# If not empty, the selected image will be in one of the defined folders.
+# If empty, all folders in the image_dir are considered.
+# If a subfolder should be included, it's parent folder must be included as well. 
+# So consider putting image files only in the leaf folders:
+#
+# Example:
+# images
+# |-A
+#   |-B
+#     |- 1.png
+#   |-C
+#     |- 2.png
+#
+# If you only want 1.png to be included, the include_folders must look as follows:
+# include_folders = ["A", "B"]
+###
+include_folders = []

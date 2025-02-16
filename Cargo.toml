@@ -1,0 +1,35 @@
+[package]
+name = "nerdcli"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jochen Oko"]
+license = "MIT"
+description = "A tool that brings popculture images and quotes to your command line."
+readme = "README.md"
+homepage = "https://github.com/jochen-oko/nerdcli"
+repository = "https://github.com/jochen-oko/nerdcli"
+keywords = ["cli", "nerdy", "joy-of-use", "kitty"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+clap = { version = "4", features = ["derive"]}
+colored = "3.0.0"
+dialoguer = "0.11.0"
+directories = "6.0.0"
+fs_extra = "1.3.0"
+image = "0.25.5"
+rand = "0.9.0"
+serde = "1.0.217"
+serde_derive = "1.0.217"
+termion = "4.0.3"
+toml = "0.8.20"
+viuer = { version = "0.9", features = ["print-file"] }
+
+
+
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
