@@ -8,17 +8,28 @@ It all started with a bit of spare time and the interest in trying out rust.
 Although it works on my machine (tm), I have no clue, if it works with different Terminal Emulators or Operating Systems. (I tested on arch and ubuntu with kitty).
 
 # Installation
-Download the latest release and extract it. If you run the executable nerdcli in place next to the assets folder, it will create a default configuration.
+1. Clone this repo or download the source code
+2. build with ```cargo build --release```
+3. copy the executable ```nerdcli``` to the base path of the repo (so that it on the same level as the ```assets``` folder). ```nerdcli``` checks on startup if it can find the configuration. If no config exists, it will create a default configuration from the content of the ```assets``` folder.
+4. If your config was created (automatically or manually), you can put the executable anywhere you want
+5. call the ```nerdcli```-program from your shell-config file (e.g. for zsh under Linux: ~/.zshrc)
 
 However the default configuration just contains some quotes and one image.
-To get things to be a bit more personal, just keep your screenshot tool at hand while searching for your favourite images. It's for the CLI, so size and resolution is not so much of a deal breaker.
 
+## Get more images
+To get things to be a bit more personal, just keep your screenshot tool at hand while searching for your favourite images. It's for the CLI, so size and resolution is not so much of a deal breaker.
+Copy new images to the directory ```images``` in the config directory. You can also organize images in sub-folders, as the ```images```-directory will be read recursively.
+
+## Get more quotes
 For more quotes, you can get manual or just ask chatGPT to provide some from author xy in the format:
 [[quotes]]
 text = ""
 author = ""
 date = ""
 source = ""
+
+Paste all quotes to an existing or new ```toml```-file in the config directory under quotes/[language]. If you put your quotes in a different directory than 'quotes/en', be sure to update ```quotes_dir``` and ```quote_language``` in the ```nerdcli.toml```.
+
 
 # Impressions and configurations
 
